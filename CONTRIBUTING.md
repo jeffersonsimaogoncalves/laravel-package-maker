@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/naoray/laravel-package-maker).
+We accept contributions via Pull Requests on [Github](https://github.com/JeffersonSimaoGoncalves/laravel-package-maker).
 
 
 ## Pull Requests

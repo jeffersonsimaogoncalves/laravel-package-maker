@@ -1,8 +1,8 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands\Package;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\Package;
 
-use Naoray\LaravelPackageMaker\Commands\GeneratorCommand;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\GeneratorCommand;
 
 class GitignoreMakeCommand extends GeneratorCommand
 {

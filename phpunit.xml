@@ -10,7 +10,7 @@
          stopOnFailure="false">
 
     <testsuites>
-        <testsuite name="naoray/laravel-package-maker Test Suite">
+        <testsuite name="JeffersonSimaoGoncalves/laravel-package-maker Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

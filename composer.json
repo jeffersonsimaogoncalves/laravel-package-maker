@@ -23,13 +23,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Naoray\\LaravelPackageMaker\\": "./src"
+      "JeffersonSimaoGoncalves\\LaravelPackageMaker\\": "./src"
     }
   },
   "minimum-stability": "dev",
   "autoload-dev": {
     "psr-4": {
-      "Naoray\\LaravelPackageMaker\\Tests\\": "tests"
+      "JeffersonSimaoGoncalves\\LaravelPackageMaker\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -38,7 +38,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Naoray\\LaravelPackageMaker\\LaravelPackageMakerServiceProvider"
+        "JeffersonSimaoGoncalves\\LaravelPackageMaker\\LaravelPackageMakerServiceProvider"
       ]
     }
   },

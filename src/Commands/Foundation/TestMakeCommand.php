@@ -1,10 +1,10 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands\Foundation;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\Foundation;
 
 use Illuminate\Foundation\Console\TestMakeCommand as MakeTest;
-use Naoray\LaravelPackageMaker\Traits\CreatesPackageStubs;
-use Naoray\LaravelPackageMaker\Traits\HasNameInput;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\CreatesPackageStubs;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\HasNameInput;
 use Symfony\Component\Console\Input\InputOption;
 
 class TestMakeCommand extends MakeTest

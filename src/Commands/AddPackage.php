@@ -1,10 +1,10 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Naoray\LaravelPackageMaker\Traits\InteractsWithTerminal;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\InteractsWithTerminal;
 
 class AddPackage extends Command
 {

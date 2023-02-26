@@ -1,6 +1,6 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Traits;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Traits;
 
 use Symfony\Component\Console\Input\InputArgument;
 

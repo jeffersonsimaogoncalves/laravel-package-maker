@@ -1,8 +1,8 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Tests\Feature;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Tests\Feature;
 
-use Naoray\LaravelPackageMaker\Tests\TestCase;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Tests\TestCase;
 
 class ClonePackageTest extends TestCase
 {
@@ -26,7 +26,7 @@ class ClonePackageTest extends TestCase
     /** @test */
     public function it_can_clone_git_repositories()
     {
-        $src = 'git@github.com:Naoray/laravel-package-maker.git';
+        $src = 'git@github.com:jeffersimaogoncalves/laravel-package-maker.git';
         $target = './tests/Support/git-package-clone';
 
         $this->artisan('package:clone', [
@@ -46,7 +46,7 @@ class ClonePackageTest extends TestCase
     /** @test */
     public function it_can_clone_remote_repositories()
     {
-        $src = 'https://github.com/naoray/laravel-package-maker';
+        $src = 'https://github.com/jeffersimaogoncalves/laravel-package-maker';
         $target = './tests/Support/git-package-clone';
 
         $this->artisan('package:clone', [

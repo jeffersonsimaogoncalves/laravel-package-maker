@@ -1,8 +1,8 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Tests\Feature;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Tests\Feature;
 
-use Naoray\LaravelPackageMaker\Tests\TestCase;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Tests\TestCase;
 
 class SavePackageCredentialsTest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands;
 
 use Illuminate\Console\GeneratorCommand as Generator;
-use Naoray\LaravelPackageMaker\Traits\CreatesPackageStubs;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\CreatesPackageStubs;
 
 abstract class GeneratorCommand extends Generator
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands\Routing;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\Routing;
 
 use Illuminate\Routing\Console\ControllerMakeCommand as MakeController;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Naoray\LaravelPackageMaker\Traits\CreatesPackageStubs;
-use Naoray\LaravelPackageMaker\Traits\HasNameInput;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\CreatesPackageStubs;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\HasNameInput;
 
 class ControllerMakeCommand extends MakeController
 {

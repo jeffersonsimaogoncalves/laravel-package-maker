@@ -1,10 +1,10 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands\Foundation;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\Foundation;
 
 use Illuminate\Foundation\Console\RuleMakeCommand as MakeRule;
-use Naoray\LaravelPackageMaker\Traits\CreatesPackageStubs;
-use Naoray\LaravelPackageMaker\Traits\HasNameInput;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\CreatesPackageStubs;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\HasNameInput;
 
 class RuleMakeCommand extends MakeRule
 {

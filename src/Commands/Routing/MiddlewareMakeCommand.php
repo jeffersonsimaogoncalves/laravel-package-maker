@@ -1,10 +1,10 @@
 <?php
 
-namespace Naoray\LaravelPackageMaker\Commands\Routing;
+namespace JeffersonSimaoGoncalves\LaravelPackageMaker\Commands\Routing;
 
 use Illuminate\Routing\Console\MiddlewareMakeCommand as MakeMiddleware;
-use Naoray\LaravelPackageMaker\Traits\CreatesPackageStubs;
-use Naoray\LaravelPackageMaker\Traits\HasNameInput;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\CreatesPackageStubs;
+use JeffersonSimaoGoncalves\LaravelPackageMaker\Traits\HasNameInput;
 
 class MiddlewareMakeCommand extends MakeMiddleware
 {

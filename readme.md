@@ -206,8 +206,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 - [Jefferson Simão Gonçalves](https://github.com/jeffersonsimaogoncalves)
-- [Krishan König](https://github.com/naoray)
-- [All Contributors](https://github.com/naoray/laravel-package-maker/contributors)
+- [Krishan König](https://github.com/JeffersonSimaoGoncalves)
+- [All Contributors](https://github.com/JeffersonSimaoGoncalves/laravel-package-maker/contributors)
 
 ## Security
 If you discover any security-related issues, please email gerson.simao.92@gmail.com instead of using the issue tracker.
