@@ -1,5 +1,5 @@
 {
-  "name": "naoray/laravel-package-maker",
+  "name": "jeffersonsimaogoncalves/laravel-package-maker",
   "description": "Get a package skeleton and all other `make` commands from laravel base for package development.",
   "type": "package",
   "license": "MIT",
@@ -7,6 +7,10 @@
     "laravel"
   ],
   "authors": [
+    {
+      "name": "Jefferson Simão Gonçalves",
+      "email": "gerson.simao.92@gmail.com"
+    },
     {
       "name": "Krishan Koenig",
       "email": "krishan.koenig@googlemail.com"
