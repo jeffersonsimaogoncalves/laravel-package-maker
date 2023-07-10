@@ -26,7 +26,7 @@ class ClonePackageTest extends TestCase
     /** @test */
     public function it_can_clone_git_repositories()
     {
-        $src = 'git@github.com:jeffersimaogoncalves/laravel-package-maker.git';
+        $src = 'https://github.com/jeffersimaogoncalves/laravel-package-maker';
         $target = './tests/Support/git-package-clone';
 
         $this->artisan('package:clone', [
