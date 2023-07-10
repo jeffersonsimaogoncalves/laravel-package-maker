@@ -15,12 +15,11 @@ class ClonePackageTest extends TestCase
         $this->artisan('package:clone', [
             'src' => $src,
             'target' => $target,
-        ]);
+        ])->assertSuccessful();
 
         $this->assertTrue($this->files->isDirectory($target));
-        if ($this->files->isDirectory($target)) {
-            $this->assertEquals(count($this->files->allFiles($target, true)), count($this->files->allFiles($src, true)));
-        }
+        $this->assertTrue($this->files->isDirectory($target . '/src'));
+        $this->assertEquals(count($this->files->allFiles($target, true)), count($this->files->allFiles($src, true)));
 
         $this->files->deleteDirectory($target);
     }
@@ -28,42 +27,18 @@ class ClonePackageTest extends TestCase
     /** @test */
     public function it_can_clone_git_repositories()
     {
-        $src = 'https://github.com/jeffersimaogoncalves/laravel-package-maker.git';
+        $src = 'https://github.com/jeffersonsimaogoncalves/laravel-package-maker.git';
         $target = './tests/Support/git-package-clone';
 
         $this->artisan('package:clone', [
             'src' => $src,
             'target' => $target,
-        ]);
+        ])->assertSuccessful();
         $this->assertTrue($this->files->isDirectory($target));
-        if ($this->files->isDirectory($target)) {
-            $this->assertEquals(
-                count($this->files->allFiles($target . '/src', true)),
-                count($this->files->allFiles('./src', true))
-            );
-        }
-
-        $this->files->deleteDirectory($target);
-    }
-
-    /** @test */
-    public function it_can_clone_remote_repositories()
-    {
-        $src = 'https://github.com/jeffersimaogoncalves/laravel-package-maker.git';
-        $target = './tests/Support/git-package-clone';
-
-        $this->artisan('package:clone', [
-            'src' => $src,
-            'target' => $target,
-        ]);
-
-        $this->assertTrue($this->files->isDirectory($target));
-        if ($this->files->isDirectory($target)) {
-            $this->assertEquals(
-                count($this->files->allFiles($target . '/src', true)),
-                count($this->files->allFiles('./src', true))
-            );
-        }
+        $this->assertEquals(
+            count($this->files->allFiles($target . '/src', true)),
+            count($this->files->allFiles('./src', true))
+        );
 
         $this->files->deleteDirectory($target);
     }

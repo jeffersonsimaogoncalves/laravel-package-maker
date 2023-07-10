@@ -11,14 +11,15 @@ trait InteractsWithTerminal
      *
      * @param string $command
      * @param string $path
+     * @return int
      */
-    protected function runConsoleCommand($command, $path)
+    protected function runConsoleCommand(string $command, string $path): int
     {
         $output = method_exists($this, 'getOutput') ? $this->getOutput() : false;
         $process = Process::fromShellCommandline($command, $path)->setTimeout(null);
         $process->setTty($process->isTtySupported());
 
-        $process->run(function ($type, $line) use ($output) {
+        return $process->run(function ($type, $line) use ($output) {
             if ($output) {
                 $output->write($line);
             }

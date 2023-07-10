@@ -47,53 +47,32 @@ class ClonePackage extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return int
      */
     public function handle()
     {
         if ($this->files->isDirectory($target = $this->getTargetInput())) {
-            $this->error($target.' directory already exists!');
+            $this->error($target . ' directory already exists!');
         }
 
         if ($this->srcIsRemote()) {
-            return $this->gitClone();
+            $this->gitClone();
+            return self::SUCCESS;
         }
 
         $this->localClone();
+
+        return self::SUCCESS;
     }
 
     /**
-     * Clone local package.
+     * Get the target path.
+     *
+     * @return string
      */
-    public function localClone()
+    public function getTargetInput(): string
     {
-        $successfull = $this->files->copyDirectory($this->getSrcInput(), $this->getTargetInput());
-
-        if (! $successfull) {
-            $this->error('Copying was not successfull!');
-        }
-
-        if ($this->files->isDirectory($vendor = $this->getTargetInput().'/vendor')) {
-            $this->files->deleteDirectory($vendor);
-
-            $this->info('Removed vendor folder.');
-        }
-
-        $this->info('Cloning was successful!');
-    }
-
-    /**
-     * Clone package via git.
-     */
-    public function gitClone()
-    {
-        $this->runConsoleCommand('git clone '.$this->argument('src').' '.$this->argument('target'), getcwd());
-
-        if ($this->files->isDirectory($git = $this->getTargetInput().'/.git')) {
-            $this->files->deleteDirectory($git);
-
-            $this->info('Removed .git folder.');
-        }
+        return trim($this->argument('target'));
     }
 
     /**
@@ -101,7 +80,7 @@ class ClonePackage extends Command
      *
      * @return bool
      */
-    public function srcIsRemote()
+    public function srcIsRemote(): bool
     {
         return Str::contains($this->getSrcInput(), ['https', 'git@']);
     }
@@ -111,18 +90,46 @@ class ClonePackage extends Command
      *
      * @return string
      */
-    public function getSrcInput()
+    public function getSrcInput(): string
     {
         return trim($this->argument('src'));
     }
 
     /**
-     * Get the target path.
-     *
-     * @return string
+     * Clone package via git.
      */
-    public function getTargetInput()
+    public function gitClone(): int
     {
-        return trim($this->argument('target'));
+        $result = $this->runConsoleCommand('git clone ' . $this->argument('src') . ' ' . $this->argument('target'), getcwd());
+
+        if ($this->files->isDirectory($git = $this->getTargetInput() . '/.git')) {
+            $this->files->deleteDirectory($git);
+
+            $this->info('Removed .git folder.');
+        }
+
+        return $result;
+    }
+
+    /**
+     * Clone local package.
+     */
+    public function localClone(): int
+    {
+        $successFull = $this->files->copyDirectory($this->getSrcInput(), $this->getTargetInput());
+
+        if (!$successFull) {
+            $this->error('Copying was not successFull!');
+        }
+
+        if ($this->files->isDirectory($vendor = $this->getTargetInput() . '/vendor')) {
+            $this->files->deleteDirectory($vendor);
+
+            $this->info('Removed vendor folder.');
+        }
+
+        $this->info('Cloning was successful!');
+
+        return (int)$successFull;
     }
 }
